@@ -15,6 +15,7 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
 from .models import CarMake, CarModel
+from .restapis import get_request, analyze_review_sentiments, post_review
 
 
 # Get an instance of a logger
@@ -23,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 
-# Create a `login_request` view to handle sign in request
+
 @csrf_exempt
 def login_user(request):
     # Get username and password from request.POST dictionary
